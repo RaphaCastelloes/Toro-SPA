@@ -27,7 +27,6 @@ export class AuthComponent {
     if (emailRegex.test(control.value) || cpfRegex.test(control.value) || cnpjRegex.test(control.value)) {
       return null;
     } else {
-      console.log(this.authForm);
       return { 'invalidUserName': true };
     }
   }
