@@ -2,6 +2,6 @@
   publish = "dist/spa"
   command = "ng build --prod"
 [[redirects]]
-  from = "/"
+  from = "/*"
   to = "/index.html"
   status = 200
