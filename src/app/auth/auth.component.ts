@@ -10,11 +10,19 @@ import { Router } from '@angular/router';
 })
 export class AuthComponent {
 
-  dadosIncorretos = false;
+
+  // Message to be displayed when autentication fails
+  errorMessage = "";
+
+  // Loading spinner the form
+  isLoading = false;
+
   authForm = new FormGroup({
     userName: new FormControl('', [Validators.required, this.isInvalidUserName.bind(this)]),
     password: new FormControl('', [Validators.required]),
   });
+
+
 
   constructor(private authService: AuthService, private router: Router) { }
 
@@ -22,31 +30,39 @@ export class AuthComponent {
     if (!this.authForm.valid) {
       return;
     }
+
+    this.isLoading = true;
+
+
     const userName = this.authForm.value.userName;
     const password = this.authForm.value.password;
 
     this.authService.login(userName, password).subscribe(
       {
         next: (response) => {
-          this.dadosIncorretos = false;
+          this.errorMessage = "";
           localStorage.setItem('token', response);
           console.log(response);
           this.router.navigate(['/home']);
+          this.isLoading = false;
         },
         error: (err) => {
-          this.isDadosIncorretos(err);
+
+          if (err.status === 401) {
+            this.errorMessage = "Dados incorretos. Digite novamente.";;
+          }
+          else {
+            this.errorMessage = "Erro desconhecido. Tente novamente mais tarde.";
+          }
           console.log(err);
+          this.isLoading = false;
         },
         complete: () => {
           console.log('completed');
+          this.isLoading = false;
         }
       });
   }
-  isDadosIncorretos(err: any) {
-    err.status === 401 ? this.dadosIncorretos = true : this.dadosIncorretos = false;
-  }
-
-
 
   // Check if the userName is an e-mail, a CPF or a CNPJ
   isInvalidUserName(control: FormControl) {

@@ -8,12 +8,17 @@ import { AppComponent } from './app.component';
 import { AuthComponent } from './auth/auth.component';
 import { HomeComponent } from './home/home.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { LoadingSpinnerComponent } from './loading-spinner/loading-spinner.component';
+import { NotFoundComponent } from './not-found/not-found.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     AuthComponent,
     HomeComponent,
+    LoadingSpinnerComponent,
+    NotFoundComponent,
 
 
   ],

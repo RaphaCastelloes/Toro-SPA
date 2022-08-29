@@ -5,14 +5,16 @@
         </p>
     </div>
 </div>
-<div class="row login">
+<div class="row" *ngIf="isLoading">
+    <app-loading-spinner class="spinner"></app-loading-spinner>
+</div>
+<div class="row login" *ngIf="!isLoading">
     <div class="col-xs-12">
         <form [formGroup]="authForm" (ngSubmit)="onSubmit()">
-            <h2 class="title">
+            <h4 class="title">
                 Acesse sua conta Toro.
-            </h2>
-            <span *ngIf="dadosIncorretos" class="dados-incorretos">Dados incorretos. Digite novamente.</span>
-            <span *ngIf="!dadosIncorretos" class="dados-incorretos">&nbsp;</span>
+            </h4>
+            <span class="dados-incorretos">{{errorMessage}}&nbsp;</span>
             <p class="input">
                 <label for="userName">E-mail ou CPF</label>
                 <input type="userName" id="userName" class="form-control" formControlName="userName">

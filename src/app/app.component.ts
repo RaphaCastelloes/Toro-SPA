@@ -19,4 +19,8 @@ export class AppComponent {
     localStorage.removeItem('token');
     this.router.navigate(['/']);
   }
+
+  goHome() {
+    this.router.navigate(['./home']);
+  }
 }

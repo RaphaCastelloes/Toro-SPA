@@ -1,24 +1,28 @@
-.logo {
-    margin: auto;
-    margin-top: 100px;
-    display: block;
-}
-
 .login {
-    margin: 50px auto;
+    margin: 40px auto;
     padding: 50px;
     width: 400px;
     border: 2px solid #ccc;
 }
 
-.title {
-    font-size: 1.5em;
+.logo {
+    margin: 30px auto;
+    display: block;
+}
+
+.spinner {
+    text-align: center;
+    padding: 50px;
     color: #444;
     margin-bottom: 50px;
 }
 
+.title {
+    margin-bottom: 20px;
+}
+
 .input {
-    margin-bottom: 50px;
+    margin-bottom: 30px;
 }
 
 .button {
