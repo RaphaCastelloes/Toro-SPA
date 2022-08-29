@@ -10,6 +10,7 @@ import { Router } from '@angular/router';
 })
 export class AuthComponent {
 
+  dadosIncorretos = false;
   authForm = new FormGroup({
     userName: new FormControl('', [Validators.required, this.isInvalidUserName.bind(this)]),
     password: new FormControl('', [Validators.required]),
@@ -27,11 +28,13 @@ export class AuthComponent {
     this.authService.login(userName, password).subscribe(
       {
         next: (response) => {
+          this.dadosIncorretos = false;
           localStorage.setItem('token', response);
           console.log(response);
           this.router.navigate(['/home']);
         },
         error: (err) => {
+          this.isDadosIncorretos(err);
           console.log(err);
         },
         complete: () => {
@@ -39,6 +42,11 @@ export class AuthComponent {
         }
       });
   }
+  isDadosIncorretos(err: any) {
+    err.status === 401 ? this.dadosIncorretos = true : this.dadosIncorretos = false;
+  }
+
+
 
   // Check if the userName is an e-mail, a CPF or a CNPJ
   isInvalidUserName(control: FormControl) {

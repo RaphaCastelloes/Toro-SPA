@@ -27,3 +27,8 @@
     background-color: #6131b4;
 
 }
+
+.dados-incorretos {
+    color: red;
+    font-size: 12px;
+}

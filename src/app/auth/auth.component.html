@@ -11,6 +11,8 @@
             <h2 class="title">
                 Acesse sua conta Toro.
             </h2>
+            <span *ngIf="dadosIncorretos" class="dados-incorretos">Dados incorretos. Digite novamente.</span>
+            <span *ngIf="!dadosIncorretos" class="dados-incorretos">&nbsp;</span>
             <p class="input">
                 <label for="userName">E-mail ou CPF</label>
                 <input type="userName" id="userName" class="form-control" formControlName="userName">
