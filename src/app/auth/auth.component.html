@@ -1,16 +1,26 @@
 <div class="row">
     <div class="col-xs-12">
+        <p>
+            <img class="logo" src="assets/images/toro-logo.svg" alt="logo" class="logo">
+        </p>
+    </div>
+</div>
+<div class="row login">
+    <div class="col-xs-12">
         <form [formGroup]="authForm" (ngSubmit)="onSubmit()">
-            <p>
-                <label for="userName">CPF, CNPJ ou E-mail</label>
+            <h2 class="title">
+                Acesse sua conta Toro.
+            </h2>
+            <p class="input">
+                <label for="userName">E-mail ou CPF</label>
                 <input type="userName" id="userName" class="form-control" formControlName="userName">
             </p>
-            <p>
-                <label for="password">Password</label>
+            <p class="input">
+                <label for="password">Senha</label>
                 <input type="password" id="password" class="form-control" formControlName="password">
             </p>
             <p>
-                <button class="btn btn-primary" type="submit" [disabled]="!authForm.valid">Entrar</button>
+                <button class="btn btn-primary button" type="submit" [disabled]="!authForm.valid">Entrar</button>
             </p>
         </form>
     </div>

@@ -1,4 +1,29 @@
-form {
-    margin: 100px;
-    padding: 10px;
+.logo {
+    margin: auto;
+    margin-top: 100px;
+    display: block;
+}
+
+.login {
+    margin: 50px auto;
+    padding: 50px;
+    width: 400px;
+    border: 2px solid #ccc;
+}
+
+.title {
+    font-size: 1.5em;
+    color: #444;
+    margin-bottom: 50px;
+}
+
+.input {
+    margin-bottom: 50px;
+}
+
+.button {
+    width: 276px;
+    margin: auto;
+    background-color: #6131b4;
+
 }

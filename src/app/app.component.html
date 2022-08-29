@@ -1,1 +1,26 @@
+<nav class="menu">
+    <img src="assets/images/toro-logo.svg" alt="logo" class="logo">
+    <div class="col-xs-2 menu-option">
+        BOLSA
+    </div>
+    <div class="col-xs-2 menu-option">
+        MAIS INVESTIMENTOS
+    </div>
+    <div class="col-xs-2 menu-option">
+        APRENDA
+    </div>
+    <div class="col-xs-2 menu-option">
+        PLATAFORMAS
+    </div>
+    <div class="col-xs-2 menu-option">
+        AJUDA
+    </div>
+    <div *ngIf="isLogado()">
+        <button class="nav-button" (click)="desconectar()">Desconectar</button>
+    </div>
+    <div *ngIf="!isLogado()">
+        <button class="nav-button">Entrar</button>
+        <button class="nav-button">Cadastre-se</button>
+    </div>
+</nav>
 <router-outlet></router-outlet>
