@@ -10,6 +10,9 @@ import { HomeComponent } from './home/home.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { LoadingSpinnerComponent } from './loading-spinner/loading-spinner.component';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { AprenderMaisComponent } from './aprender-mais/aprender-mais.component';
+import { InvestirMaisComponent } from './investir-mais/investir-mais.component';
+import { InvestimentosComponent } from './investimentos/investimentos.component';
 
 
 @NgModule({
@@ -19,6 +22,9 @@ import { NotFoundComponent } from './not-found/not-found.component';
     HomeComponent,
     LoadingSpinnerComponent,
     NotFoundComponent,
+    AprenderMaisComponent,
+    InvestirMaisComponent,
+    InvestimentosComponent,
 
 
   ],
