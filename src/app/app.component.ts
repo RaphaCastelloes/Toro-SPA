@@ -8,6 +8,7 @@ import { Router } from '@angular/router';
 })
 export class AppComponent {
   title = 'Toro Investimentos';
+  public isCollapsed = true;
 
   constructor(private router: Router) { }
 
