@@ -1,13 +1,8 @@
 .login {
-    margin: 40px auto;
+    margin: 10px auto;
     padding: 50px;
-    width: 400px;
-    border: 2px solid #ccc;
-}
-
-.logo {
-    margin: 40px auto;
-    display: block;
+    max-width: 400px;
+    /* border: 2px solid #ccc; */
 }
 
 .spinner {
@@ -19,6 +14,7 @@
 
 .title {
     margin-bottom: 20px;
+    text-align: center;
 }
 
 .input {
@@ -26,7 +22,7 @@
 }
 
 .button {
-    width: 276px;
+    width: 100%;
     margin: auto;
     background-color: #6131b4;
 
