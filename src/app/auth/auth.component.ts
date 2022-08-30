@@ -31,12 +31,14 @@ export class AuthComponent {
       return;
     }
 
+    // Used to control the loading spinner
     this.isLoading = true;
 
-
+    // User credentials
     const userName = this.authForm.value.userName;
     const password = this.authForm.value.password;
 
+    // Authenticate the user
     this.authService.login(userName, password).subscribe(
       {
         next: (response) => {

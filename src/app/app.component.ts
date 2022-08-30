@@ -12,16 +12,14 @@ export class AppComponent {
 
   constructor(private router: Router) { }
 
+  // Check if it is logged in by checking if the token is in the local storage
   isLogado() {
     return localStorage.getItem('token');
   }
 
+  // Logout by removing the token from the local storage
   desconectar() {
     localStorage.removeItem('token');
     this.router.navigate(['/']);
-  }
-
-  goHome() {
-    this.router.navigate(['/home']);
   }
 }
